@@ -16,5 +16,10 @@ A Simple website to send customized automatic schedule Notifications to a given 
 4. mongoose
 5. nodemailer
 
+## Available Commands/Scripts
+1. `start`: `node server.js`,
+2. `devStart`: `nodemon server.js`,
+3. `watch:css`: `postcss ./public/css/tailwind.css -o ./public/css/style.css --watch`
+
 ### Live Demo (<a href="https://automaticnotificationsystem.herokuapp.com/">Link</a>)
 
