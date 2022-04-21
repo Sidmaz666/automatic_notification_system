@@ -5,7 +5,7 @@ A Simple website to send customized automatic schedule Notifications to a given 
 <img src="https://user-images.githubusercontent.com/81381178/164507757-55622ff7-e6ff-454a-8783-e871841cb570.png" width="100%">
 
 ## ENV Variables
-1. `DB_RUI` - Mongo DB URI 
+1. `DB_URI` - Mongo DB URI 
 2. `EMAIL` - Admin Email Address
 3. `PASS` - Admin Email Password
 
