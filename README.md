@@ -1,5 +1,5 @@
 # automatic_notification_system
-A Simple website to send customized automatic schedule Notifications to a given Email.
+A Simple website to send customized automatic scheduled Notifications to a given Email.
 
 ## Front-End Preview
 <img src="https://user-images.githubusercontent.com/81381178/164507757-55622ff7-e6ff-454a-8783-e871841cb570.png" width="100%">
