@@ -101,27 +101,15 @@ export async function cornJob(){
 
 
 		  for(let y in user_set_day){
-		    
 		    const user_day = user_set_day[y]
-
-		    const isDayMatched = user_day == user_set_day ? true : false
-		    
 		    if(user_day == current_day){
-	
-
-
 		      for(let z=0; 51 > z; z++ ){
-
 			const newTime = current_time + "+" + addZeroBefore(z) 
-
 			const isTimeMatched = user_set_time == newTime ? true : false
 			console.log({today, current_time ,user_set_time, timezone , set_timezone , user_day, newTime})
-
  		        if(isTimeMatched == true){
-			
 			send_mail(user_set_email,user_set_name,user_set_message)
 			break
-		      
 		       }	
 		      }			
 		    }
