@@ -91,11 +91,10 @@ export async function cornJob(){
 
 		  const set_timezone = "Asia/Calcutta"
 		  const today = new Date(new Date().toLocaleString("en-US", {timeZone: set_timezone }).toString())
-		  const current_time = addZeroBefore(today.getHours()) + ":" + addZeroBefore(today.getMinutes()) + ":" + addZeroBefore(today.getSeconds())
+		  let current_time = addZeroBefore(today.getHours()) + ":" + addZeroBefore(today.getMinutes()) + ":" + addZeroBefore(today.getSeconds())
 
 		  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 		
-		  console.log({today,current_time,user_set_time, timezone , set_timezone})
 		  
 		  const dayList = ["sunday","monday","tuesday","wednesday ","thursday","friday","saturday"]
 		  const current_day = dayList[today.getDay()]
@@ -107,17 +106,24 @@ export async function cornJob(){
 
 		    const isDayMatched = user_day == user_set_day ? true : false
 		    
-		    if(isDayMatched == true){
+		    if(user_day == current_day){
 	
-		      const isTimeMatched = user_set_time == current_time ? true : false
 
- 		      if(isTimeMatched == true){
+
+		      for(let z=0; 51 > z; z++ ){
+
+			const newTime = current_time + "+" + addZeroBefore(z) 
+
+			const isTimeMatched = user_set_time == newTime ? true : false
+			console.log({today, current_time ,user_set_time, timezone , set_timezone , user_day, newTime})
+
+ 		        if(isTimeMatched == true){
 			
 			send_mail(user_set_email,user_set_name,user_set_message)
 			break
-			
-
-		      }
+		      
+		       }	
+		      }			
 		    }
 		  }
 	    	}

@@ -134,7 +134,8 @@ const submitForm = async () => {
       }
 
     const sec = addZeroBefore(tim.getSeconds())
-    const time =  sel_timeInp.value + ":" + sec 
+    const random = addZeroBefore(Math.floor(Math.random() * (50 - 0 + 1) + 0))
+    const time =  sel_timeInp.value + ":" + sec + "+" + random 
     const message = sel_message.value
 	
     const data = {
