@@ -128,14 +128,11 @@ const submitForm = async () => {
   if(isEmailValidated && isNameValid && isDayValid && isMessage && checkTime ){
     const email =  sel_emailInp.value
     const name = sel_nameInp.value
-    const tim = new Date()
     const addZeroBefore = (n) => {
-       return (n < 10 ? '0' : '') + n;
-      }
-
-    const sec = addZeroBefore(tim.getSeconds())
+     return (n < 10 ? '0' : '') + n;
+  }
     const random = addZeroBefore(Math.floor(Math.random() * (50 - 0 + 1) + 0))
-    const time =  sel_timeInp.value + ":" + sec + "+" + random 
+    const time =  sel_timeInp.value + "+" + random 
     const message = sel_message.value
 	
     const data = {

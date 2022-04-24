@@ -91,7 +91,7 @@ export async function cornJob(){
 
 		  const set_timezone = "Asia/Calcutta"
 		  const today = new Date(new Date().toLocaleString("en-US", {timeZone: set_timezone }).toString())
-		  let current_time = addZeroBefore(today.getHours()) + ":" + addZeroBefore(today.getMinutes()) + ":" + addZeroBefore(today.getSeconds())
+		  let current_time = addZeroBefore(today.getHours()) + ":" + addZeroBefore(today.getMinutes()) 
 
 		  const timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
 		
@@ -99,14 +99,12 @@ export async function cornJob(){
 		  const dayList = ["sunday","monday","tuesday","wednesday ","thursday","friday","saturday"]
 		  const current_day = dayList[today.getDay()]
 
-
 		  for(let y in user_set_day){
 		    const user_day = user_set_day[y]
 		    if(user_day == current_day){
 		      for(let z=0; 51 > z; z++ ){
 			const newTime = current_time + "+" + addZeroBefore(z) 
 			const isTimeMatched = user_set_time == newTime ? true : false
-			console.log({today, current_time ,user_set_time, timezone , set_timezone , user_day, newTime})
  		        if(isTimeMatched == true){
 			send_mail(user_set_email,user_set_name,user_set_message)
 			break
@@ -117,7 +115,7 @@ export async function cornJob(){
 	    	}
 	    })
 	})
-    setTimeout(function(){cornJob()},1000)
+    setTimeout(function(){cornJob()},60000)
 }
 
  	async function send_mail(email,name,message){
